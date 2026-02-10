@@ -8,57 +8,86 @@
     <link rel="stylesheet" href="{% static 'app/css/style.css' %}">
     <link rel="stylesheet" href="{% static 'app/css/all.min.css' %}">
     <link rel="stylesheet" href="{% static 'app/css/owl.carousel.min.css' %}">
-    <title>Dari products |{% block title %}{% endblock  %}</title>
+    <title>Dari products {% block title %}{% endblock  %}</title>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-success">
 <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
+    <a class="navbar-brand" href="#">
+<img src="{% static "app/images/product/Neel.png" %}" width="30" height="30" alt="Neel Logo"/>
+    </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-        <a class="nav-link active" aria-current="page" href="#">Home</a>
+        <a class="nav-link active" aria-current="page" href="/">Home</a>
         </li>
         <li class="nav-item">
         <a class="nav-link" href="#">Link</a>
         </li>
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
+            Products
             </a>
         <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
+            <li><a class="dropdown-item" href="#">Milk</a></li>
+            <li><a class="dropdown-item" href="#">curd</a></li>
+            <li><a class="dropdown-item" href="#">Milkshake</a></li>
+            <li><a class="dropdown-item" href="#">lassi</a></li>
+            <li><a class="dropdown-item" href="#">Ghee</a></li>
+            <li><a class="dropdown-item" href="#">Paneer</a></li>
+            <li><a class="dropdown-item" href="#">Cheese</a></li>
+            <li><a class="dropdown-item" href="#">Ice-creams</a></li>
         </ul>
         </li>
         <li class="nav-item">
-            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+            <a class="nav-link text-white" href="#" >About Us</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-white" href="#" >Contact Us</a>
         </li>
     </ul>
     <form class="d-flex" role="search">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-        <button class="btn btn-outline-success" type="submit">Search</button>
+        <button class="btn-outline-danger" type="submit">Search</button>
     </form>
     </div>
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item dropdown mx-2">
+            <a class="nav-link dropdown-toggle text-white" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown"  aria-expanded="false">
+                Santanu
+                </a>
+            <ul class="dropdown-menu" aria-labelledby="profileDropdown">
+                <li><a class="dropdown-item" href="#">Profile</a></li>
+                <li><a class="dropdown-item" href="#">Orders</a></li>
+                <li><a class="dropdown-item" href="#">Change Password</a></li>
+                <li><a class="dropdown-item" href="#">Logout</a></li>
+            </ul>
+        </li>
+        <li class="nav-item mx-2">
+            <a href="#" class="nav-link text-white">Cart 4</a>
+        </li>
+        <li class="nav-item mx-2">
+            <a href="#" class="nav-link text-white">Wishlist 4</a>
+        </li>
+        <li class="nav-item mx-2">
+            <a href="#" class="nav-link text-white">Login</a>
+        </li>
+        <li class="nav-item mx-2">
+            <a href="#" class="nav-link text-white">Register</a>
+        </li>
+    </ul>
 </div>
 </nav>
-    <h1>Welcome to the E-Commerce App</h1>
 
+    {% block banner-slider %} {% endblock banner-slider %}
+    
     {% block main-content %} {% endblock main-content %}
 
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 text-center">
-                    <p>&copy; 2024 Dari Products. All rights reserved.</p>
-                </div>
-            </div>
-        </div>
+    <footer class="container-fluid fixed-bottom bg-success text-center p-2 mt-5">
+        Copyright : 2024 || Developer by : Santanu Technology
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
