@@ -3,6 +3,7 @@ from django.views import View
 from urllib import request
 from .models import Product
 from django.http import HttpResponse
+from django.db.models import Count
 
 # Create your views here.
 def home(request):
@@ -11,4 +12,5 @@ def home(request):
 class CategoryView(View):
     def get(self, request,val):
         product = Product.objects.filter(category=val)
-        return render(request, "app/category.html", {"product": product, "val": val})
+        title = product.values('title').annotate(total=Count('title'))
+        return render(request, "app/category.html",locals())
