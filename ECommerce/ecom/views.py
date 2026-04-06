@@ -9,12 +9,23 @@ from django.db.models import Count
 def home(request):
     return render(request, "app/home.html")
 
+def about(request):
+    return render(request, "app/about.html")
+
+def contact(request):
+    return render(request, "app/contact.html")
+
 class CategoryView(View):
     def get(self, request,val):
         product = Product.objects.filter(category=val)
         title = product.values('title').annotate(total=Count('title'))
         return render(request, "app/category.html",locals())
     
+class CategoryTitle(View):
+    def get(self, request,val):
+        Product = Product.objects.filter(title=val)
+        title = Product.objects.filter(category=Product[0].category).values('title')
+        return render(request,"app/category.html",locals())
 
 class ProductDetail(View):
     def get(self, request, pk):
